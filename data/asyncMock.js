@@ -15,7 +15,7 @@ export const getItem = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(listadoProductos[0]);
-        }, 3000);
+        }, 2000);
     });
 }
 

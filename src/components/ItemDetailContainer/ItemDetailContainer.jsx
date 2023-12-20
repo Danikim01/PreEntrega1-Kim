@@ -6,7 +6,6 @@ import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState(null);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,13 +23,9 @@ const ItemDetailContainer = () => {
             {item ? 
                 <>
                     <ItemDetail item={item} />
-                    <ItemDetail item={item} />
-                    <ItemDetail item={item} />
-                    <ItemDetail item={item} />
-                    <ItemDetail item={item} />
                 </>
              : 
-                <Spinner></Spinner>
+                <Spinner/>
             }
         </div>
         </>

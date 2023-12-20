@@ -7,19 +7,18 @@ import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
-class App extends React.Component{
-  render(){
-    return(
-      <div className="App">
-        <NavBar/>
-        <ItemListContainer greeting="Bienvenidos a Bordo!"/>
 
-        <ItemDetailContainer/>
+const App = () => {
+  return(
+    <div className="App">
+      <NavBar/>
+      <ItemListContainer greeting="Bienvenidos a Bordo!"/>
+
+      <ItemDetailContainer/>
 
 
-      </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default App

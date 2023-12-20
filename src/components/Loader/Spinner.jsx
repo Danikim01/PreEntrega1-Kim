@@ -3,7 +3,7 @@ import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 
 const Spinner = () => (
   <div>
-        <Segment>
+    <Segment>
       <Dimmer active inverted>
         <Loader inverted content='Loading' />
       </Dimmer>
