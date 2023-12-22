@@ -10,7 +10,8 @@
     justify-content: space-around;
 }
 
-.NavBar ul li{
+.NavBar ul .li{
+    text-align: center;
     list-style: none;
     font-size: 18px;
     color:antiquewhite;
@@ -20,7 +21,7 @@
     transition: all 0.5s ease;
 }
 
-.NavBar ul li:hover{
+.NavBar ul .li:hover{
     cursor: pointer;
     background-color: aqua;
 }
