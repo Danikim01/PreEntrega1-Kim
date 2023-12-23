@@ -7,7 +7,12 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className='NavBar'>
-        <ul>
+        <ul>         
+            <Link to="/">
+              <div className='logo' style={{display:'flex',justifyContent:'center',alignItems:'center',width:'100%'}}>
+                <img src="/kisspng-react-logo-javascript-front-and-back-ends-user-int-5afef575942028.3034008315266584216067.jpg" alt="" />
+              </div>
+            </Link>
             <Link className="li" to="/">
               <li>Home</li>
             </Link>
