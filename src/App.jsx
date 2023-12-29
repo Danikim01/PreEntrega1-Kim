@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetail from './components/ItemDetailContainer/ItemDetailContainer';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const App = () => {
