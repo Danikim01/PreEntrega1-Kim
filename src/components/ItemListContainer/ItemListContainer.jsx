@@ -8,27 +8,35 @@ import './ItemListContainer.css'
 import UserCard from '../UserCard/UserCard'
 import ItemList from '../ItemList/ItemList'
 
-const ItemListContainer = ({greeting}) => {
+//Import Firebase
+import {db} from "../../firebase/firebaseConfig"
+import { query, collection, getDocs} from "firebase/firestore";
+
+const ItemListContainer = () => {
   const [items, setItems] = useState([])
 
-  let { categoryId } = useParams();
-
   useEffect(() => {
-    axios.get('https://fakestoreapi.com/products')
-    .then(res => {
-      setItems(res.data)
-    })
-  }, [])
+    const getItems = async () => {
+      const q = query(
+        collection(db,"items")
+      );
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({...doc.data(), id: doc.id});
+      });
+      setItems(docs);
+    };
+    getItems();
+  }, []);  
 
   return (
     <>
       {
-      <>
-        <h1>{categoryId ? categoryId.charAt(0).toUpperCase() + categoryId.slice(1) : greeting}</h1>
         <div>
-          <ItemList items={items} categoryId={categoryId}/>
+          <ItemList items={items}/>
         </div>
-      </>}
+      }
     </>
   );
   

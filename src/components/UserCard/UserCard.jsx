@@ -11,12 +11,12 @@ const UserCard = ({item}) => {
       <CardActionArea sx={{height:'100%'}}>
         <CardMedia sx={{width:'100%',height:'300px',objectFit:'contain',padding:'10px'}}
           component="img"
-          image={item.image}
-          alt="product image"
+          image={item.img}
+          alt={item.name}
         />
         <CardContent sx={{textAlign:'center',height:'100%'}}>
           <Typography gutterBottom variant="h5" component="div">
-            {item.title}
+            {item.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {item.description}
