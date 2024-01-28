@@ -4,7 +4,6 @@ export const CartContext = createContext()
 
 export const CartContextProvider = ({children}) => {
     const [cart, setCartList] = useState([])
-    const [counter,setCounter] = useState(1)
 
     const amountOfItems = () => {
         //Implementar la funcionalidad de contar la cantidad de items en el carrito sean iguales o no
@@ -19,33 +18,23 @@ export const CartContextProvider = ({children}) => {
     }
 
     const addToCart = (name,quantity,price,image,id) => {
-        if (counter == 0){
-            deleteItem(id)
-        }
         //Implementar la funcionalidad de agregar un producto al carrito
         const search = cart.find(item => item.name === name)
         if (search){
             search.quantity += quantity
-            //update the cart with the new quantity
             setCartList([...cart])
-            return
         }else{
             setCartList([...cart, {name,quantity,price,image,id}])
         }
     }
     const removeList = () => {
-        console.log("Entra a limpiar carrito")
-        //Implementa la funcionalidad de dejar el carrito vacio
         setCartList([])    
     }
     const deleteItem = (itemId) => {
-        //Implementa la funcionalidad de eliminar un item del carrito
-        console.log("Entra a borrar item??")
-        console.log(itemId)
         setCartList(cart.filter(item => item.id !== itemId))
     }
     return (
-        <CartContext.Provider value={[cart, addToCart, removeList, deleteItem,counter,setCounter,amountOfItems]}>
+        <CartContext.Provider value={[cart, addToCart, removeList, deleteItem,amountOfItems]}>
             {children}
         </CartContext.Provider>
     )

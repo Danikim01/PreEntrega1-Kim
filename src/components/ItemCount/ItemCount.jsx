@@ -1,30 +1,33 @@
 import React, { useState,useEffect } from 'react';
 import './ItemCount.css';
 
-const ItemCount = ({ initial,setCounter}) => {
-  const [initial_number, setInitial] = useState(initial);
-
-  const add = () => {
-    setInitial(initial_number + 1);
-    setCounter(initial_number + 1);
-  };
-
-  const subtract = () => {
-    if (initial_number > 0){
-        setInitial(initial_number - 1);
-        setCounter(initial_number - 1);
-    }else{
-        setInitial(0);
-    }
-  };
-
+const ItemCount = ({item,id,addToCart}) => {
+  const [ItemCount, setItemCount] = useState(1);
+    
   return (
-    <div className='contador'>
-      <button onClick={subtract}>-</button>
-      <span>{initial_number}</span>
-      <button onClick={add}>+</button>
-    </div>
+    
+    <>
+      <div className='contador'>
+        <button
+          onClick={() => {
+            setItemCount(ItemCount + 1);
+          }}
+        >
+          +
+        </button>
+        <span>{ItemCount}</span>
+        <button
+          onClick={() => {
+            if (ItemCount > 1)
+              setItemCount(ItemCount - 1);
+          }}
+        >
+          -
+        </button>
+      </div>
+      <button onClick={() => addToCart(item.name,ItemCount,item.price,item.img,id)}>Agregar al Carrito</button>
+    </>
   );
-};
+}
 
 export default ItemCount;

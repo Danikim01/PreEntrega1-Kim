@@ -5,7 +5,7 @@ import { CartContext } from '../Context/CartContext';
 
 const CartWidget = () => {
 
-    const [cart, addToCart, removeList, deleteItem, counter, setCounter, amountOfItems] = useContext(CartContext);
+    const [cart, addToCart, removeList, deleteItem, amountOfItems] = useContext(CartContext);
     const iconStyle = {
         fontSize: '2rem',
     };

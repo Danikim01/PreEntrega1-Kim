@@ -3,9 +3,10 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import {CartContext} from '../Context/CartContext'
+import { ItemContent } from 'semantic-ui-react'
 
 const ItemDetail = ({item,id}) => {
-  const [cart, addToCart, removeList, deleteItem,counter,setCounter] = useContext(CartContext)
+  const [cart, addToCart, removeList, deleteItem, amountOfItems] = useContext(CartContext);
 
   return (
     <>
@@ -18,8 +19,7 @@ const ItemDetail = ({item,id}) => {
                 <h1>{item.name}</h1>
                 <p>{item.description}</p>
                 <h3>Price: ${item.price}</h3>
-                <ItemCount initial={1} setCounter={setCounter}/>
-                <button onClick={() => addToCart(item.name,counter,item.price,item.img,id)}>Agregar al Carrito</button>
+                <ItemCount item={item} id={id} addToCart={addToCart}/>
             </div>
         </div>
     }

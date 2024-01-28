@@ -3,11 +3,10 @@ import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { count } from 'firebase/firestore';
-import ItemCountItem from '../ItemCountItem/ItemCountItem';
 import './Cart.css';
 
 export const Cart = () => {
-  const [cart, addToCart, removeList, deleteItem, counter, setCounter, amountOfItems] = useContext(CartContext);
+  const [cart, addToCart, removeList, deleteItem, amountOfItems] = useContext(CartContext);
 
   return (
     <div className='carrito'>
@@ -18,9 +17,7 @@ export const Cart = () => {
               <div className='img-producto'><img src={item.image} alt={item.name} /></div>
               <h3>{item.name}</h3>
               <h4>Price: {item.price}</h4>
-              <div className='contadores'>
-                <ItemCountItem item={item} addToCart={addToCart} deleteItem={deleteItem} />
-              </div>
+              <h4>Cantidad: {item.quantity}</h4>
             </div>
           ))}
           <div className='total'>
