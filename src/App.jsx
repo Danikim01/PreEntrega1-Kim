@@ -11,6 +11,7 @@ import {Cart} from './components/Cart/Cart';
 
 //Context Provider import
 import {CartContextProvider} from './components/Context/CartContext';
+import Checkout from './components/Checkout/Checkout';
 
 const App = () => {
   return(
@@ -23,6 +24,7 @@ const App = () => {
             <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
             <Route path='/item/:id' element={<ItemDetail/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
+            <Route path='/checkout' element={<Checkout/>}></Route>
             <Route path='*' element={<ErrorPage/>}></Route>
           </Routes>
         </div>

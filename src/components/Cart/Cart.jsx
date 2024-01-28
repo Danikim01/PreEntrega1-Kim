@@ -1,8 +1,7 @@
 import { React, useState } from 'react';
 import { CartContext } from '../Context/CartContext';
 import { useContext } from 'react';
-import ItemCount from '../ItemCount/ItemCount';
-import { count } from 'firebase/firestore';
+import { Link } from 'react-router-dom';
 import './Cart.css';
 
 export const Cart = () => {
@@ -24,8 +23,10 @@ export const Cart = () => {
             <h3>Total: ${cart.reduce((acc, item) => acc + item.price * item.quantity, 0)}</h3>
           </div>
           <div className="botones">
-            <button onClick={()=> removeList() }>Vaciar Carrito</button>  
-            <button>Finalizar Compra</button>
+            <button onClick={()=> removeList() }>Vaciar Carrito</button>
+            <Link to="/checkout">
+              <button>Finalizar Compra</button>
+            </Link>  
           </div>
         </>
       ) : (
