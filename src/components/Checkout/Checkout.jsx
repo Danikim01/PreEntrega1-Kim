@@ -41,6 +41,7 @@ const Checkout = () => {
         });
         setOrderId(docRef.id);
         setValues(initialState);
+        removeList();
     }
 
     return (
