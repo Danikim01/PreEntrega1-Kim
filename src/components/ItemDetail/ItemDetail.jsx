@@ -4,7 +4,7 @@ import ItemCount from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import {CartContext} from '../Context/CartContext'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item,id}) => {
   const [cart, addToCart, removeList, deleteItem,counter,setCounter] = useContext(CartContext)
 
   return (
@@ -19,7 +19,7 @@ const ItemDetail = ({item}) => {
                 <p>{item.description}</p>
                 <h3>Price: ${item.price}</h3>
                 <ItemCount initial={1} setCounter={setCounter}/>
-                <button onClick={() => addToCart(item.name,counter,item.price,item.img)}>Agregar al Carrito</button>
+                <button onClick={() => addToCart(item.name,counter,item.price,item.img,id)}>Agregar al Carrito</button>
             </div>
         </div>
     }

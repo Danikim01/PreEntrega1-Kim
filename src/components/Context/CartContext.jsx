@@ -18,7 +18,10 @@ export const CartContextProvider = ({children}) => {
         return cartCount
     }
 
-    const addToCart = (name,quantity,price,image) => {
+    const addToCart = (name,quantity,price,image,id) => {
+        if (counter == 0){
+            deleteItem(id)
+        }
         //Implementar la funcionalidad de agregar un producto al carrito
         const search = cart.find(item => item.name === name)
         if (search){
@@ -27,15 +30,18 @@ export const CartContextProvider = ({children}) => {
             setCartList([...cart])
             return
         }else{
-            setCartList([...cart, {name,quantity,price,image}])
+            setCartList([...cart, {name,quantity,price,image,id}])
         }
     }
     const removeList = () => {
+        console.log("Entra a limpiar carrito")
         //Implementa la funcionalidad de dejar el carrito vacio
         setCartList([])    
     }
     const deleteItem = (itemId) => {
         //Implementa la funcionalidad de eliminar un item del carrito
+        console.log("Entra a borrar item??")
+        console.log(itemId)
         setCartList(cart.filter(item => item.id !== itemId))
     }
     return (

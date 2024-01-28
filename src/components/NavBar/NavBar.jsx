@@ -16,17 +16,17 @@ const NavBar = () => {
             <Link className="li" to="/">
               <li>Home</li>
             </Link>
-            <Link className="li" to="/category/electronics">
-              <li>Electronics</li>
+            <Link className="li" to="/category/short T-shirt">
+              <li>Short T-shirt </li>
             </Link>
-            <Link className="li" to="/category/women's clothing">
-              <li>Women's clothing</li>
+            <Link className="li" to="/category/long T-shirt">
+              <li>Long T-shirt </li>
             </Link>
-            <Link className="li" to="/category/men's clothing">
-              <li>Men's clothing</li>
+            <Link className="li" to="/category/long pants">
+              <li>Long pants</li>
             </Link>
-            <Link className="li" to="/category/jewelery">
-              <li>Jewelery</li>
+            <Link className="li" to="/category/short pants">
+              <li>Short pants</li>
             </Link>
             <Link  className="li" to="/cart">
               <li><CartWidget/></li>

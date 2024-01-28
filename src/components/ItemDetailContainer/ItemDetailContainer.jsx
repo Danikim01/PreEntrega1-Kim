@@ -43,7 +43,7 @@ const ItemDetailContainer = () => {
         {item.map((data)=>{
            return (
             <Link to={`/item/${data.id}`} key={data.id}>
-                <ItemDetail item={data}/> 
+                <ItemDetail item={data} id={id}/> 
             </Link>
            ) 
         })}
