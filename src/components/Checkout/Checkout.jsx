@@ -3,6 +3,7 @@ import {db} from "../../firebase/firebaseConfig"
 import { collection, addDoc } from "firebase/firestore";
 import TextField from "@mui/material/TextField";
 import { CartContext } from "../Context/CartContext";
+import "./Checkout.css";
 
 const initialState = {
     name: "",
@@ -16,11 +17,8 @@ const Checkout = () => {
     const [orderId, setOrderId] = useState(null);
     const [cart, addToCart, removeList, deleteItem, amountOfItems] = useContext(CartContext);
 
-    console.log(cart)
-
     const onChange = (e) => {
         const { value, name } = e.target;
-        console.log(value, name);
         setValues({ ...values, [name]: value });
     }
 
@@ -47,43 +45,50 @@ const Checkout = () => {
 
     return (
         <div className="checkout-form">
-            <form action="" className="form-container" onSubmit={onSubmit}>
-                <TextField
-            placeholder="Name"
-            style={{ margin: 10, width: 400 }}
-            name="name"
-            value={values.name}
-            onChange={onChange}
-            required
-            />
-            <TextField
-            placeholder="Last Name"
-            style={{ margin: 10, width: 400 }}
-            name="lastName"
-            value={values.lastName}
-            onChange={onChange}
-            required
-            />
-            <TextField
-            placeholder="Email"
-            style={{ margin: 10, width: 400 }}
-            name="email"
-            value={values.email}
-            onChange={onChange}
-            required
-            />
-                        <TextField
-            placeholder="Phone Number"
-            style={{ margin: 10, width: 400 }}
-            name="phone"
-            value={values.phone}
-            onChange={onChange}
-            required
-            />
-            <button className="btnASendAction">Send</button>
-            </form>
+            {!orderId ? (
+                <form action="" className="form-container" onSubmit={onSubmit}>
+                    <h1>Checkout Form</h1>
+                    <TextField
+                        placeholder="Name"
+                        style={{ margin: 10, width: 400 }}
+                        name="name"
+                        value={values.name}
+                        onChange={onChange}
+                        required
+                    />
+                    <TextField
+                        placeholder="Last Name"
+                        style={{ margin: 10, width: 400 }}
+                        name="lastName"
+                        value={values.lastName}
+                        onChange={onChange}
+                        required
+                    />
+                    <TextField
+                        placeholder="Email"
+                        style={{ margin: 10, width: 400 }}
+                        name="email"
+                        value={values.email}
+                        onChange={onChange}
+                        required
+                    />
+                    <TextField
+                        placeholder="Phone Number"
+                        style={{ margin: 10, width: 400 }}
+                        name="phone"
+                        value={values.phone}
+                        onChange={onChange}
+                        required
+                    />
+                    <button className="btnASendAction">Send</button>
+                </form>
+            ) : (
+                <div className="message-sucess">
+                    <h1>Thank you for your purchase! Your order number is {orderId}</h1>
+                </div>
+            )}
         </div>
-    )
+    );    
 }
 
 export default Checkout
