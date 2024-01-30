@@ -1,8 +1,7 @@
-# React + Vite
+# Curso React JS: Proyecto Final
+## E-commerce project
+Se desarrolló una app de un e-commerce para poder vender ropa de forma online
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Funcionalidad 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Los productos a disposición se pueden separar en distintas categorías. Si se clickea un producto se podrá ver los detalles del mismo junto a una opción de poder agregar el producto al carrito de compras dentro del cual se detalla el pedido junto al precio total. A su vez , es en el carrito donde se podrá concretar la compra y donde se pedirán los datos del cliente, los cuales serán almacenados junto a los detalles del pedido.

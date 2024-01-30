@@ -1,0 +1,47 @@
+.checkout-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 15px;
+}
+
+.btnASendAction{
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0c040;
+}
+
+.message-success{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    color: green;
+    font-size: 20px;
+}
+
+.message-success button{
+    padding: 10px;
+    width: 150px;
+    height: 80px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0c040;
+}

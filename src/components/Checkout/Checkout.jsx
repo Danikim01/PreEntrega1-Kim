@@ -4,6 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import TextField from "@mui/material/TextField";
 import { CartContext } from "../Context/CartContext";
 import "./Checkout.css";
+import { Link } from "react-router-dom";
 
 const initialState = {
     name: "",
@@ -84,8 +85,11 @@ const Checkout = () => {
                     <button className="btnASendAction">Send</button>
                 </form>
             ) : (
-                <div className="message-sucess">
+                <div className="message-success">
                     <h1>Thank you for your purchase! Your order number is {orderId}</h1>
+                    <Link to="/">
+                        <button>Go Back to the store</button>
+                    </Link>
                 </div>
             )}
         </div>

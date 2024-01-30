@@ -41,7 +41,8 @@ const ItemListContainer = () => {
 
 return (
   <>
-    <ItemList items={items} />
+    {categoryId ? <h2>{categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}</h2> : <h1>Welcome to our Shop!</h1>}
+    <ItemList items={items}/>
   </>
 );
 }

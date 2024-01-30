@@ -20,7 +20,6 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(()=>{
-        console.log(id)
         const getItem = async () => {
             const q = query(
                 collection(db,"items"),
@@ -31,7 +30,6 @@ const ItemDetailContainer = () => {
             querySnapshot.forEach((doc)=>{
                 docs.push({ ...doc.data(), id: doc.id });
             })
-            console.log(docs)
             setItem(docs)
         }
         getItem()
