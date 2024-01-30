@@ -2,10 +2,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import { Link } from 'react-router-dom'
 import './ItemListContainer.css'
-import UserCard from '../UserCard/UserCard'
 import ItemList from '../ItemList/ItemList'
 
 //Import Firebase

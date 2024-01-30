@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import './ItemCount.css';
+import ItemQuantitySelector from './ItemQuantitySelector';
 
 const ItemCount = ({item,id,addToCart}) => {
   const [ItemCount, setItemCount] = useState(1);
@@ -7,24 +7,7 @@ const ItemCount = ({item,id,addToCart}) => {
   return (
     
     <>
-      <div className='contador'>
-        <button
-          onClick={() => {
-            setItemCount(ItemCount + 1);
-          }}
-        >
-          +
-        </button>
-        <span>{ItemCount}</span>
-        <button
-          onClick={() => {
-            if (ItemCount > 1)
-              setItemCount(ItemCount - 1);
-          }}
-        >
-          -
-        </button>
-      </div>
+      <ItemQuantitySelector ItemCount={ItemCount} setItemCount={setItemCount}/>
       <button onClick={() => addToCart(item.name,ItemCount,item.price,item.img,id)}>Agregar al Carrito</button>
     </>
   );
