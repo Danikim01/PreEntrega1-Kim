@@ -36,6 +36,7 @@ const Checkout = () => {
             })),
             date: new Date().toString(),
             total: cart.reduce((acc, item) => acc + item.price * item.quantity, 0),
+            state: "Generada",
         };
         const docRef = await addDoc(collection(db, "orders"), {
             order,

@@ -1,0 +1,31 @@
+.ResponsiveNavigation {
+	display: flex;
+	width: 100%;
+	background: rgb(97, 206, 248);
+}
+
+.ResponsiveNavigationContainer {
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.fa-cart-shopping {
+	margin-right: 5px;
+}
+
+.logo {
+    /* Add any specific styling for the container div */
+    padding: 10px;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+  }
+  
+  .logo svg {
+    /* Add styles for the SVG inside the container */
+    width: 100%; /* Make the SVG fill the entire container */
+    height: 100%; /* Make the SVG fill the entire container */
+    fill: black; /* Set the fill color of the SVG */
+    object-fit: contain;
+  }
+  

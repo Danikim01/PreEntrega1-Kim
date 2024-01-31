@@ -3,11 +3,11 @@ import 'semantic-ui-css/semantic.min.css'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetail from './components/ItemDetailContainer/ItemDetailContainer';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import {Cart} from './components/Cart/Cart';
+import ResponsiveNavigation from './components/ResponsiveNavigation/ResponsiveNavigation';
 
 //Context Provider import
 import {CartContextProvider} from './components/Context/CartContext';
@@ -18,7 +18,8 @@ const App = () => {
     <CartContextProvider>
       <Router>
         <div className="App">
-          <NavBar/>
+          {/* <NavBar/> */}
+          <ResponsiveNavigation/>
           <Routes>
             <Route path='/' element={<ItemListContainer />}></Route>
             <Route path='/category/:categoryId' element={<ItemListContainer/>}></Route>
