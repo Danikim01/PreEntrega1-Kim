@@ -4,18 +4,21 @@ import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
+import Spinner from '../Spinner/Spinner'
 
 //Import Firebase
 import {db} from "../../firebase/firebaseConfig"
 import { query, collection, getDocs,where} from "firebase/firestore";
 
+
 const ItemListContainer = () => {
   const [items, setItems] = useState([])
   const {categoryId} = useParams()
+  const [loading, setLoading] = useState(true)
 
 
   useEffect(() => {
-    const getIems = async () => {
+    const getItems = async () => {
       let q = query(
         collection(db,"items")
       )
@@ -31,15 +34,16 @@ const ItemListContainer = () => {
         docs.push({...doc.data(), id: doc.id});
       });
       setItems(docs)
+      setLoading(false)
     }
-    getIems()
+    getItems()
   }, [categoryId]);  
 
 
 return (
   <>
     {categoryId ? <h2>{categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}</h2> : <h1>Welcome to our Shop!</h1>}
-    <ItemList items={items}/>
+    {loading ? <Spinner/> : <ItemList items={items}/>}
   </>
 );
 }

@@ -1,10 +1,10 @@
 import React, { useState,useContext } from "react";
 import {db} from "../../firebase/firebaseConfig"
 import { collection, addDoc } from "firebase/firestore";
-import TextField from "@mui/material/TextField";
 import { CartContext } from "../Context/CartContext";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
+import Brief from "./Brief";
 
 const initialState = {
     name: "",
@@ -49,42 +49,7 @@ const Checkout = () => {
     return (
         <div className="checkout-form">
             {!orderId ? (
-                <form action="" className="form-container" onSubmit={onSubmit}>
-                    <h1>Checkout Form</h1>
-                    <TextField
-                        placeholder="Name"
-                        style={{ margin: 10, width: 400 }}
-                        name="name"
-                        value={values.name}
-                        onChange={onChange}
-                        required
-                    />
-                    <TextField
-                        placeholder="Last Name"
-                        style={{ margin: 10, width: 400 }}
-                        name="lastName"
-                        value={values.lastName}
-                        onChange={onChange}
-                        required
-                    />
-                    <TextField
-                        placeholder="Email"
-                        style={{ margin: 10, width: 400 }}
-                        name="email"
-                        value={values.email}
-                        onChange={onChange}
-                        required
-                    />
-                    <TextField
-                        placeholder="Phone Number"
-                        style={{ margin: 10, width: 400 }}
-                        name="phone"
-                        value={values.phone}
-                        onChange={onChange}
-                        required
-                    />
-                    <button className="btnASendAction">Send</button>
-                </form>
+                <Brief values={values} onChange={onChange} onSubmit={onSubmit}/>
             ) : (
                 <div className="message-success">
                     <h1>Thank you for your purchase! Your order number is {orderId}</h1>
