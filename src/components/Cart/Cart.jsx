@@ -17,6 +17,7 @@ export const Cart = () => {
               <h3>{item.name}</h3>
               <h4>Price: {item.price}</h4>
               <h4>Cantidad: {item.quantity}</h4>
+              <span style={{cursor:"pointer",fontSize:"25px"}} onClick={()=> deleteItem(item.id)}>X</span>
             </div>
           ))}
           <div className='total'>

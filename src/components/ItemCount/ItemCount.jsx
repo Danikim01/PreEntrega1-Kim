@@ -20,6 +20,7 @@ const ItemCount = ({item,id,addToCart}) => {
           outline:"none",
           border:"none",
           cursor:"pointer",
+          borderRadius:"10px",
         }
       
       } onClick={() => addToCart(item.name,ItemCount,item.price,item.img,id)}>Agregar al Carrito</button>

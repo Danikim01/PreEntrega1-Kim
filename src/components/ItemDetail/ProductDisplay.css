@@ -1,40 +1,53 @@
 .productdisplay{
     display: flex;
-    margin: 0px 100px;
     padding: 20px;
 }
 
 .productdisplay-left{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "img-list main";
     gap:17px;
 }
 
 .productdisplay-img-list{
     display: flex;
     flex-direction: column;
+    grid-area: img-list;
+    width: 100%;
     gap:16px;
 }
 
 .productdisplay-img-list img{
-    height: 163px;
+    width: 100%;
+    height: 166px;
+    object-fit: contain;
 }
 
+
 .productdisplay-main-img{
-    width: 586px;
-    height: 700px;
+    grid-area: main;
+    width: 100%;
+    height: 100%;
 }
 
 .productdisplay-right{
-    width: 100%;
-    margin: 0px 70px;
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .productdisplay-right h1{
+    text-align: center;
     color: #3d3d3d;
-    font-size: 40px;
-    font-weight: 700;
+}
+
+.productdisplay-right-description{
+    text-align: center;
+    max-width: 400px;
 }
 
 .productdisplay-right-price{
@@ -46,8 +59,8 @@
 
 .productdisplay-right-size h1{
     margin-top: 30px;
-    color:#3d3d3d;
     font-size: 20px;
+    color:#3d3d3d;
     font-weight: 600;
 }
 
@@ -103,4 +116,43 @@
 
 .productdisplay-right-colors div:nth-child(5) {
     background-color: yellow;
+}
+
+
+@media (max-width: 1300px){
+    .productdisplay{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .productdisplay-right-sizes{
+        flex-direction: column;
+        align-items: center;
+    }
+    .productdisplay-right-colors{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px){
+    .productdisplay-left{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "main"
+        "img-list";
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+    }
+
+
+    .productdisplay-main-img{
+        width: 100%;
+    }
+    .productdisplay-img-list{
+        flex-direction: row;
+
+    }
+
 }

@@ -9,13 +9,13 @@ const ProductDisplay = ({item,id}) => {
         <div className='productdisplay'>
             <div className='productdisplay-left'>
                 <div className='productdisplay-img-list'>
-                    <img src={item.img} alt={item.name} className='productdisplay-img' />
-                    <img src={item.img} alt={item.name} className='productdisplay-img' />
-                    <img src={item.img} alt={item.name} className='productdisplay-img' />
-                    <img src={item.img} alt={item.name} className='productdisplay-img' />
+                    <div><img src={item.img} alt={item.name}/></div>
+                    <div><img src={item.img} alt={item.name}/></div>
+                    <div><img src={item.img} alt={item.name}/></div>
+                    <div><img src={item.img} alt={item.name}/></div>
                 </div>
                 <div className='productdisplay-img'>
-                    <img src={item.img} alt={item.name} className='productdisplay-main-img' />
+                    <div><img src={item.img} alt={item.name} className='productdisplay-main-img' /></div>
                 </div>
             </div>
             <div className='productdisplay-right'>

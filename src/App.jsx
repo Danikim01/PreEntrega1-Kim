@@ -18,7 +18,6 @@ const App = () => {
     <CartContextProvider>
       <Router>
         <div className="App">
-          {/* <NavBar/> */}
           <ResponsiveNavigation/>
           <Routes>
             <Route path='/' element={<ItemListContainer />}></Route>
