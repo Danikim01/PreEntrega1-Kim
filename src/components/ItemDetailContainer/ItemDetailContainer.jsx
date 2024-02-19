@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import ProductDisplay from '../ItemDetail/ProductDisplay';
 import { collection, query, getDocs, where, documentId } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig';
 import Spinner from '../Spinner/Spinner';
@@ -35,7 +36,8 @@ const ItemDetailContainer = () => {
       ) : (
         item.map((data) => (
           <Link to={`/item/${data.id}`} key={data.id}>
-            <ItemDetail item={data} id={id} />
+            {/* <ItemDetail item={data} id={id} /> */}
+            <ProductDisplay item={data} id={id}/>
           </Link>
         ))
       )}

@@ -1,4 +1,4 @@
-.contador {
+/* .contador {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,4 +14,26 @@
     height: 2rem;
     margin: 0 0.5rem;
     width: 1rem;
+} */
+
+.contador{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 23px;
+    margin-bottom: 23px;
+    align-items: center;
 }
+
+.contador button{
+    background-color: #ff4141;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+}
+

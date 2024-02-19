@@ -1,0 +1,106 @@
+.productdisplay{
+    display: flex;
+    margin: 0px 100px;
+    padding: 20px;
+}
+
+.productdisplay-left{
+    display: flex;
+    gap:17px;
+}
+
+.productdisplay-img-list{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.productdisplay-img-list img{
+    height: 163px;
+}
+
+.productdisplay-main-img{
+    width: 586px;
+    height: 700px;
+}
+
+.productdisplay-right{
+    width: 100%;
+    margin: 0px 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productdisplay-right h1{
+    color: #3d3d3d;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.productdisplay-right-price{
+    margin: 14px 0px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff4141;
+}
+
+.productdisplay-right-size h1{
+    margin-top: 30px;
+    color:#3d3d3d;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.productdisplay-right-color h1{
+    margin-top: 30px;
+    color:#3d3d3d;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.productdisplay-right-sizes{
+    display: flex;
+    gap: 20px;
+}
+
+.productdisplay-right-sizes div{
+    padding: 18px 24px;
+    background: #fbfbfb;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.productdisplay-right-colors{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.productdisplay-right-colors div {
+    width: 40px; /* Ancho del cuadro de color */
+    height: 40px; /* Alto del cuadro de color */
+    border-radius: 50%; /* Hacer el cuadro de color redondo */
+    cursor: pointer;
+    font-size: 0;
+}
+
+.productdisplay-right-colors div:nth-child(1) {
+    background-color: red;
+}
+
+.productdisplay-right-colors div:nth-child(2) {
+    background-color: blue;
+}
+
+.productdisplay-right-colors div:nth-child(3) {
+    background-color: green;
+}
+
+.productdisplay-right-colors div:nth-child(4) {
+    background-color: black;
+}
+
+.productdisplay-right-colors div:nth-child(5) {
+    background-color: yellow;
+}
